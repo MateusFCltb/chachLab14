@@ -1,0 +1,20 @@
+---
+title: "LabReport"
+output: html_document
+date: "2025-04-24"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("main.R")
+
+```
+
+## Exploring Trends
+
+### questions
+
+1. What do you notice about the trends in corn prices?
+2. How about demand and supply?
+3. What was happening around 2006 to cause the price of corn to rise so rapidly during that period?
+4. What can you say from these graphs about the relative sizes of demand and supply over time? Does one tend to outstrip the other?
