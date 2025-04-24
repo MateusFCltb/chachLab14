@@ -13,7 +13,7 @@ reg1 <- lm(corn_price ~ SUR, data = WASDE) # corn price vs sur
 
 ## testing gtsummary
 library(gtsummary)
-tbl_regression(reg1, intercept = TRUE) %>%
+reg1_summary <- tbl_regression(reg1, intercept = TRUE) %>%
   add_glance_source_note(include = c(r.squared, nobs))
 
 
@@ -28,10 +28,20 @@ elasticity <- reg1$coefficients[2]*(mean_sur/mean_price)
 
 ##### explor resuduals
 # Summary statistics of residuals
-summary(resid(reg1))
+reg1_residualSummary <- summary(resid(reg1))
+# Table that is formatted for rmarkdown for reg1_residualSummary not as a data frame
+t_reg1_residualSummary <- data.frame(
+  Min = min(resid(reg1)),
+  Q1 = quantile(resid(reg1), 0.25),
+  Median = median(resid(reg1)),
+  Mean = mean(resid(reg1)),
+  Q3 = quantile(resid(reg1), 0.75),
+  Max = max(resid(reg1))
+)
+
 
 # Histogram of residuals
-hist(resid(reg1), 
+g_histResid <- plot(hist(resid(reg1)), 
      main = "Histogram of Linear Regression Errors",
      xlab = "Linear Model Residuals")
 

@@ -25,7 +25,7 @@ ggsave("corn_supply_demand_price.png",
 #=================================
 # PRICEvsSUR
 
-g_pricevsSUR <- xy_point(WASDE, WASDE$SUR, WASDE$corn_price, "fsdg", c("ffgh", "fdfgh"), "orange", TRUE)
+g_pricevsSUR <- xy_point(WASDE, WASDE$SUR, WASDE$corn_price, "Corn Price vs Stock to use ratio (1973-2019)", c( "Corn Price ($)", "Stock to use ratio"), "orange", TRUE)
 g_pricevsSUR
 
 #================================

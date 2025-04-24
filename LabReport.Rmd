@@ -10,11 +10,46 @@ source("main.R")
 
 ```
 
-## Exploring Trends
+## Step 3:  Exploring Trends
+
+```{r TIMESERIES, echo=FALSE}
+grid.arrange(g_price, g_demand, g_supply, nrow=3)
+```
+
 
 ### questions
 
 1. What do you notice about the trends in corn prices?
+  - Corn prices seem to be stable before 2005 and then spiked up over the next 10 years before dropping down a bit. It is interesting since supply and demand changes dont seem to be the reason for the price changes. This means that price pressures must be external to the USA or this dataset.
 2. How about demand and supply?
+  - Demand and supply seem to be steadily rising which makes sense both in terms of population growht as well as steady economic output increase in the USA
 3. What was happening around 2006 to cause the price of corn to rise so rapidly during that period?
+  - 
 4. What can you say from these graphs about the relative sizes of demand and supply over time? Does one tend to outstrip the other?
+- They seem to go hand in hand. It seems that corn supply is somewhat larger in terms of raw value (curve would be above the demand)
+
+
+## Step 4 : Relating Price to Corn Stock-to-Use Ratio
+
+```{r SUR, echo=FALSE}
+g_pricevsSUR
+```
+
+
+### Question:
+1. Does a linear regression line do a good job of fitting the underlying relationship between prices and SUR?
+  - It seems so. There are some outliers in terms of corn price at lower SUR values though.
+  
+## Step 5 : Linear Regression and Diagnostics
+
+### Estimating the Regression Model
+```{r}
+reg1_summary
+t_reg1_residualSummary
+```
+
+### Calculating Price Elasticity
+
+### Question:
+1. How responsive (elastic) is the price of corn to changes in corn supply and demand?
+  - 

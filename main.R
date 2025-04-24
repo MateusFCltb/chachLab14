@@ -1,8 +1,8 @@
 #install.packages("ggplot2")
 #install.packages("gridExtra")
 
-#library(ggplot2)
-#library(gridExtra)
+library(ggplot2)
+library(gridExtra)
 
 getwd()
 
