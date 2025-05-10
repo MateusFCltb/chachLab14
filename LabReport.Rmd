@@ -30,17 +30,19 @@ grid.arrange(g_price, g_demand, g_supply, nrow=3)
 
 
 ## Step 4 : Relating Price to Corn Stock-to-Use Ratio
+1. (Word Doc) Make a scatter plot of corn prices on the y-axis and the stock-to-use ratio (SUR) on the x-axis with a linear regression line. What is the general relationship between corn prices and the SUR? Is a linear regression line a good representation of this relationship? 
 
 ```{r SUR, echo=FALSE}
 g_pricevsSUR
 ```
 
 
-### Question:
+### Question fomr lab:
 1. Does a linear regression line do a good job of fitting the underlying relationship between prices and SUR?
   - It seems so. There are some outliers in terms of corn price at lower SUR values though.
   
 ## Step 5 : Linear Regression and Diagnostics
+2. Run the linear regression: Corn Price_t=α+βSUR_t+ε_t and show the regression output in a table. Include the regression coefficients, their standard errors, and the R-squared value. How do you interpret the coefficient on SUR? Is this consistent with the theory of supply and demand? How do you interpret the R-squared value? Describe the overall fit of this model.
 
 ### Estimating the Regression Model
 ```{r}
@@ -53,3 +55,19 @@ t_reg1_residualSummary
 ### Question:
 1. How responsive (elastic) is the price of corn to changes in corn supply and demand?
   - 
+  
+  
+  
+## From word Doc for submission: 
+
+
+
+
+
+3. Run the non-linear regression: Corn Price_t=α+β(1/(SUR_t ))+ε_t and show the regression output in a table. Include the regression coefficients, their standard errors, and the R-squared value. From this model, what is the marginal effect of SUR on the price of corn? Hint: if y=1/x then dy/dx = -1/x^2.
+
+4. Create a scatter plot of corn prices on SUR with regression lines for two distinct periods: 1973-2005 vs. 2006-2019. How did the relationship change between the two time periods? What could explain this?
+
+5, Run the linear regression with a dummy variable for the post 2006 period and an interaction between the post-2006 dummy and SUR: Corn Price_t=α+βSUR_t+δP2006_t+γ(P2006_t×SUR_t ) 〖+ε〗_t and show the regression output in a table. Include the regression coefficients, their standard errors, and the R-squared value. From this model, what is the marginal effect of SUR on the price of corn in the 1973-2005 period? What is the effect of SUR in the 2006-2019 period? How do you interpret the coefficient on the P2006 dummy variable?  
+
+
